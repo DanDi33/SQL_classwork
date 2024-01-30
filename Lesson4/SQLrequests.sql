@@ -9,3 +9,4 @@ use Market;
 select * from Market.Orders,Products where Orders.productId = Products.id;
 select Orders.createdAt,Orders.productCount,Products.productName from Orders join Products on Products.id = Orders.productId;
 select Orders.createdAt,Orders.productCount,Products.productName from Orders join Products on Products.id = Orders.productId where Products.price > 16000;
+select Orders.createdAt,Orders.productCount,Products.productName from Orders right join Products on Products.id = Orders.productId;
