@@ -5,3 +5,7 @@ select * from Products where id in (select productId from Orders);
 select * from Products where price < all(select price from Products where manufacture = 'Apple');
 select * from Products where not exists(select * from Orders where Orders.productId = Products.id);
 select * from Products where id not in (select productid from Orders);
+use Market;
+select * from Market.Orders,Products where Orders.productId = Products.id;
+select Orders.createdAt,Orders.productCount,Products.productName from Orders join Products on Products.id = Orders.productId;
+select Orders.createdAt,Orders.productCount,Products.productName from Orders join Products on Products.id = Orders.productId where Products.price > 16000;
